@@ -8,8 +8,10 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class UserDetailsViewController: UIViewController {
+    public var userId: String?
+    var dataProvider: UserDataProvider?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

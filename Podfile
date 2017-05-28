@@ -10,6 +10,8 @@ target 'RandomPeopleDemo' do
   pod 'AlamofireObjectMapper', '~> 4.0'
   pod 'ObjectMapper', '~> 2.2'
   pod 'AlamofireNetworkActivityIndicator', '~> 2.0'
+  pod 'Swinject'
+  pod 'SwinjectStoryboard', '~> 1.1'
   
   target 'RandomPeopleDemoTests' do
     inherit! :search_paths

@@ -11,7 +11,8 @@ import AlamofireImage
 import RealmSwift
 
 class UserListViewController: UITableViewController{
-    let userDataProvider = UserDataProvider()
+    var dataProvider: UserDataProvider? = nil
+    
     fileprivate var notificationToken: NotificationToken? = nil
     
     deinit {
@@ -20,10 +21,9 @@ class UserListViewController: UITableViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.notificationToken = self.userDataProvider.users.addNotificationBlock{ [weak self] (changes: RealmCollectionChange) in
+        self.notificationToken = self.dataProvider?.users.addNotificationBlock{ [weak self] (changes: RealmCollectionChange) in
             switch changes {
             case .error(let error):
-                // An error occurred while opening the Realm file on the background worker thread
                 fatalError("\(error)")
             default:
                 self?.update()
@@ -37,14 +37,29 @@ class UserListViewController: UITableViewController{
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.userDataProvider.users.count;
+        guard let dataProvider = self.dataProvider else {
+            return 0
+        }
+        return dataProvider.users.count;
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: BasicTableViewCell.className, for: indexPath) as? BasicTableViewCell
-        let user = self.userDataProvider.users[indexPath.item]
-        cell?.titleLabel?.text = user.firstName
-        cell?.imgView?.af_setImage(withURL: user.pictureThumbnail!)
+        let user = self.dataProvider?.users[indexPath.item]
+        cell?.titleLabel?.text = user?.firstName
+        cell?.imgView?.af_setImage(withURL: (user?.pictureThumbnail)!)
         return cell!
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //TODO: use router
+        guard let userDetailViewController = segue.destination as? UserDetailsViewController,
+            let cell = sender as? BasicTableViewCell,
+            let indexPath = tableView.indexPath(for: cell) else
+        {
+            return
+        }
+        
+        userDetailViewController.userId = self.dataProvider?.users[indexPath.row].objectId
     }
 }

@@ -66,10 +66,10 @@
             </objects>
             <point key="canvasLocation" x="276" y="68.815592203898049"/>
         </scene>
-        <!--View Controller-->
+        <!--User Details View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RandomPeopleDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="UserDetailsViewController" customModule="RandomPeopleDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -79,13 +79,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EQx-9N-tLQ">
-                                <rect key="frame" x="16" y="20" width="343" height="248"/>
+                                <rect key="frame" x="16" y="64" width="343" height="248"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="248" id="kQb-29-btt"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="gA4-oS-WzY">
-                                <rect key="frame" x="117" y="303" width="140" height="61.5"/>
+                                <rect key="frame" x="117" y="347" width="140" height="61.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="uah-cJ-f9q">
                                         <rect key="frame" x="0.0" y="0.0" width="140" height="20.5"/>

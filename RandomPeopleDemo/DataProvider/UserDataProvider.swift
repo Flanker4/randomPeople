@@ -12,7 +12,7 @@ import Realm
 import RealmSwift
 
 class UserDataProvider {
-    private let userList: UserList
+    
     
     var users: List<User>{
         get {
@@ -20,12 +20,13 @@ class UserDataProvider {
         }
     }
     
-    let localStorage: Realm
-    let networkManager: NetworkManagerProtocol
+    fileprivate let userList: UserList
+    fileprivate let localStorage: Realm
+    fileprivate let networkManager: NetworkManagerProtocol
     
-    init() {
-        localStorage = try! Realm()
-        networkManager = NetworkManager()
+    init(localStorage: Realm, networkManager: NetworkManager) {
+        self.localStorage = localStorage
+        self.networkManager = networkManager
         
         if let userList = self.localStorage.objects(UserList.self).first {
             self.userList = userList;
@@ -36,9 +37,8 @@ class UserDataProvider {
             try! self.localStorage.commitWrite()
         }
         
-        if (self.userList.users.count==0){
-            self.getUsers()
-        }
+        self.getUsers()
+       
     }
     
     func getUsers(){
@@ -48,15 +48,17 @@ class UserDataProvider {
             case .success(let value):
                 self?.localStorage.beginWrite()
                 self?.userList.users.append(objectsIn: value)
-                
+                self?.userList.page += 1
                 try! self?.localStorage.commitWrite()
             
             case .failure(let error):
                 print(error)
             }
         }
-        
-        
+    }
+    
+    func userWithId(userId: String) -> User? {
+        return self.localStorage.object(ofType: User.self, forPrimaryKey: userId)
     }
     
 }

@@ -11,18 +11,14 @@ import Alamofire
 import AlamofireObjectMapper
 import ObjectMapper
 
-struct  NetworkConstant {
-    static let URLHost = "randomuser.me"
-    static let URLScheme = "https"
-}
 
 class NetworkManager: NetworkManagerProtocol {
-    let host: String
-    let scheme: String
-    let manager: Alamofire.SessionManager
+    private let host: String
+    private let scheme: String
+    private let manager: Alamofire.SessionManager
 
     
-    init(scheme: String = NetworkConstant.URLScheme, host: String = NetworkConstant.URLHost ) {
+    init(scheme: String, host: String) {
         self.scheme = scheme
         self.host = host
         self.manager = Alamofire.SessionManager(configuration: URLSessionConfiguration.default)
