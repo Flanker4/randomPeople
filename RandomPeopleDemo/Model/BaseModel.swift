@@ -12,35 +12,9 @@ import ObjectMapper
 import Realm
 
 
-class BaseModel: Object, StaticMappable {
+class BaseModel: Object {
     
     dynamic var modifyDate: Date? = nil
-    dynamic var objectID: Int = 0
-    
-    
-    class func objectForMapping(map: Map) -> BaseMappable? {
-        return BaseModel()
-    }
-    
-    override class func primaryKey() -> String? {
-        return "objectID"
-    }
-    
-    func mapping(map: Map) {
-        //currently we don't handle .to JSON case and context
-        switch map.mappingType {
-        case .toJSON:
-            var id = self.objectID
-            id <- map[primaryJSONKey]
-        case .fromJSON:
-            self.objectID <- map[primaryJSONKey]
-        }
-        self.modifyDate = Date()
-    }
-    
-    var primaryJSONKey: String {
-        return "id"
-    }
 }
 
 extension BaseModel {

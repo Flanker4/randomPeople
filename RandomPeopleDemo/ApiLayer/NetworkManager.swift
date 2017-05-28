@@ -12,11 +12,11 @@ import AlamofireObjectMapper
 import ObjectMapper
 
 struct  NetworkConstant {
-    static let URLHost = "proveng.cloud.provectus-it.com"
-    static let URLScheme = "http"
+    static let URLHost = "randomuser.me"
+    static let URLScheme = "https"
 }
 
-class NetworkManager {
+class NetworkManager: NetworkManagerProtocol {
     let host: String
     let scheme: String
     let manager: Alamofire.SessionManager
@@ -29,7 +29,7 @@ class NetworkManager {
         
     }
     
-    public func sendNetworkRequest<T : BaseMappable>(request: NetworkRequestProtocol, completionHandler: @escaping (DataResponse<[T]>) -> Void) -> NetworkOperationProtocol? {
+    final func url(request: NetworkRequestProtocol) -> URL? {
         let path = request.path
         let parameters = request.params
         
@@ -37,24 +37,22 @@ class NetworkManager {
         urlComponents.scheme = self.scheme
         urlComponents.host = self.host
         urlComponents.path =  path
-        //urlComponents.queryItems = parameters.queryItems
-        guard let urlRequest = urlComponents.url else {
+        urlComponents.queryItems = parameters.queryItems
+        return urlComponents.url
+    }
+    
+    public func sendNetworkRequest<T : BaseMappable>(request: NetworkRequestProtocol,
+                                   completionHandler: @escaping (DataResponse<[T]>) -> Void) -> NetworkOperationProtocol? {
+        
+        guard let urlRequest = self.url(request: request) else {
             return nil
         }
-        return self.manager.request(urlRequest).responseArray(completionHandler: completionHandler)
+        return self.manager.request(urlRequest).responseArray(keyPath:"results" , completionHandler: completionHandler)
     }
 }
 
-//
-//extension Dictionary where Key == String {
-//    var queryItems: [URLQueryItem] {
-//        var result:[URLQueryItem] = []
-//        for (key, value) in self {
-//            result.append(URLQueryItem(name: key, value: value as? String));
-//        }
-//        return result
-//    }
-//}
+
+
 
 extension DataRequest: NetworkOperationProtocol  {
     

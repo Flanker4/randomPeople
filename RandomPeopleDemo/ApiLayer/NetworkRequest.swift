@@ -9,19 +9,29 @@
 import Foundation
 
 enum NetworkRequest: NetworkRequestProtocol {
-    case getUsers(page: UInt)
+    case getUsers(page: Int)
     //other methods
  
     var path: String {
         switch self {
         case .getUsers(_):
-            return ""
+            return "/api/"
         }
     }
-    var params: [String : AnyObject]{
+    var params: [String : String]{
         switch self {
-        case .getUsers(_):
-            return [:]
+        case .getUsers(let page):
+            return ["page":String(page), "results": "5", "seed":"pagination"]
         }
+    }
+}
+
+extension Dictionary where Key == String {
+    var queryItems: [URLQueryItem] {
+        var result:[URLQueryItem] = []
+        for (key, value) in self {
+            result.append(URLQueryItem(name: key, value: value as? String));
+        }
+        return result
     }
 }
