@@ -17,7 +17,31 @@ class UserDataProvider {
     fileprivate let userList: UserList
     fileprivate let localStorage: Realm
     fileprivate let networkManager: NetworkManagerProtocol
+    fileprivate var notificationToken: NotificationToken? = nil
+    
+    var changeNotificationBlock: ((Result<List<User>>)-> Void)? {
+        didSet{
+            guard let _ = changeNotificationBlock else{
+                self.notificationToken?.stop()
+                self.notificationToken = nil
+                return
+            }
+            
+            self.notificationToken = self.items.value?.addNotificationBlock{ [weak self] (changes: RealmCollectionChange) in
+                
+                switch changes {
+                case .error(let error):
+                    self?.changeNotificationBlock?(Result.failure(error))
+                default:
+                    self?.changeNotificationBlock?((self?.items)!)
+                }
+                
+            }
 
+        }
+    }
+    
+    
     init(localStorage: Realm, networkManager: NetworkManager) {
         self.localStorage = localStorage
         self.networkManager = networkManager
@@ -41,13 +65,19 @@ class UserDataProvider {
                 self?.localStorage.beginWrite()
                 self?.userList.users.append(objectsIn: value)
                 self?.userList.page += 1
+                //TODO remove force unwrap
                 try! self?.localStorage.commitWrite()
 
             case .failure(let error):
-                print(error)
+                self?.changeNotificationBlock?(.failure(error))
             }
         }
     }
+    
+    deinit {
+        self.changeNotificationBlock = nil
+    }
+    
 
 }
 

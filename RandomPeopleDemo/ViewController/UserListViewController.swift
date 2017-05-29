@@ -8,28 +8,37 @@
 
 import UIKit
 import AlamofireImage
-import RealmSwift
-
+import CCBottomRefreshControl
 class UserListViewController: UITableViewController{
     var dataProvider: UserDataProvider? = nil
+    fileprivate var isRefreshing = false
+   
     
-    fileprivate var notificationToken: NotificationToken? = nil
     
-    deinit {
-        notificationToken?.stop()
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.notificationToken = self.dataProvider?.items.value?.addNotificationBlock{ [weak self] (changes: RealmCollectionChange) in
-            switch changes {
-            case .error(let error):
-                fatalError("\(error)")
-            default:
+        
+        self.dataProvider?.changeNotificationBlock = { [weak self] result in
+            switch result {
+            case .success(_):
                 self?.update()
+            case .failure(let error):
+                print(error)
             }
-
+            self?.tableView.bottomRefreshControl?.endRefreshing()
+            self?.isRefreshing = false
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated);
+        self.setUpRefreshController()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated);
+        self.tableView.bottomRefreshControl = nil
     }
     
     func update() {
@@ -56,6 +65,15 @@ class UserListViewController: UITableViewController{
         return cell!
     }
     
+//    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+//        guard let items = self.dataProvider?.items.value else {
+//            return
+//        }
+//        if (items.count - 1 == indexPath.item) {
+//            self.refreshControl?.beginRefreshing()
+//            
+//        }
+//    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //TODO: use router
         guard let userDetailViewController = segue.destination as? UserDetailsViewController,
@@ -65,5 +83,26 @@ class UserListViewController: UITableViewController{
             return
         }
         userDetailViewController.userId = self.dataProvider?.items.value?[indexPath.row].objectId
+    }
+}
+
+
+extension UserListViewController{
+    func setUpRefreshController() {
+        if self.tableView.bottomRefreshControl != nil  {
+            return
+        }
+        let refreshControl = UIRefreshControl()
+        refreshControl.triggerVerticalOffset = 50;
+        refreshControl.addTarget(self, action: #selector(UserListViewController.handleRefresh(sender:)), for: .valueChanged)
+        self.tableView.bottomRefreshControl = refreshControl;
+    }
+    
+    func handleRefresh(sender:UIRefreshControl) {
+        if self.isRefreshing {
+            return
+        }
+        self.isRefreshing = true
+        self.dataProvider?.getUsers()
     }
 }

@@ -1,0 +1,6 @@
+framework module Pods_RandomPeopleDemoUITests {
+  umbrella header "Pods-RandomPeopleDemoUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
