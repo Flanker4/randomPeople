@@ -30,6 +30,7 @@
 		A8958D0C1EDC298800C31131 /* UserDataProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8958D0B1EDC298800C31131 /* UserDataProviderProtocol.swift */; };
 		A8958D0F1EDC5F7900C31131 /* BasicTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8958D0E1EDC5F7900C31131 /* BasicTableViewCellModel.swift */; };
 		A8958D191EDC6B4100C31131 /* UserDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8958D181EDC6B4100C31131 /* UserDetailViewModel.swift */; };
+		A8958D1C1EDC7D9200C31131 /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8958D1B1EDC7D9200C31131 /* ApiKeys.swift */; };
 		B896A46FB86ABE59504FCB57 /* Pods_RandomPeopleDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4990ADD05ED2A0C677DA7507 /* Pods_RandomPeopleDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +85,7 @@
 		A8958D0B1EDC298800C31131 /* UserDataProviderProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserDataProviderProtocol.swift; path = DataProvider/UserDataProviderProtocol.swift; sourceTree = "<group>"; };
 		A8958D0E1EDC5F7900C31131 /* BasicTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BasicTableViewCellModel.swift; path = RandomPeopleDemo/ViewModel/BasicTableViewCellModel.swift; sourceTree = SOURCE_ROOT; };
 		A8958D181EDC6B4100C31131 /* UserDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserDetailViewModel.swift; path = RandomPeopleDemo/ViewModel/UserDetailViewModel.swift; sourceTree = SOURCE_ROOT; };
+		A8958D1B1EDC7D9200C31131 /* ApiKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiKeys.swift; sourceTree = "<group>"; };
 		DCE69C080317B64A6C2D3C02 /* Pods-RandomPeopleDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RandomPeopleDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-RandomPeopleDemo/Pods-RandomPeopleDemo.release.xcconfig"; sourceTree = "<group>"; };
 		E625DF0C7FA32900CF4CA2B5 /* Pods-RandomPeopleDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RandomPeopleDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RandomPeopleDemoTests/Pods-RandomPeopleDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		FEAFAFE5B59B050B3506D5AC /* Pods-RandomPeopleDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RandomPeopleDemoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RandomPeopleDemoUITests/Pods-RandomPeopleDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				A8958D121EDC64F800C31131 /* Stuff */,
 				A8958D111EDC64CD00C31131 /* Services */,
 				0E4E3B051EDB373100FDFFF5 /* ViewController */,
+				0E11009F1EDA24AD0050EE1F /* Model */,
 				A8958D101EDC648200C31131 /* View */,
 				A8958D0D1EDC3FC400C31131 /* ViewModel */,
 			);
@@ -213,13 +216,15 @@
 			name = Helpers;
 			sourceTree = "<group>";
 		};
-		0EDC18F91EDA2818008FBC73 /* ApiLayer */ = {
+		0EDC18F91EDA2818008FBC73 /* NetworkLayer */ = {
 			isa = PBXGroup;
 			children = (
 				A8958D151EDC681300C31131 /* Procol */,
 				0EDC18FD1EDA2AAE008FBC73 /* NetworkRequest.swift */,
 				0EDC18FF1EDA2D5E008FBC73 /* NetworkManager.swift */,
+				A8958D1B1EDC7D9200C31131 /* ApiKeys.swift */,
 			);
+			name = NetworkLayer;
 			path = ApiLayer;
 			sourceTree = "<group>";
 		};
@@ -269,8 +274,7 @@
 			isa = PBXGroup;
 			children = (
 				0E4E3B0C1EDB5E0100FDFFF5 /* Helpers */,
-				0E11009F1EDA24AD0050EE1F /* Model */,
-				0EDC18F91EDA2818008FBC73 /* ApiLayer */,
+				0EDC18F91EDA2818008FBC73 /* NetworkLayer */,
 				0E4E3B011EDB2E9800FDFFF5 /* DataProvider */,
 			);
 			name = Services;
@@ -615,6 +619,7 @@
 				0EDC18FB1EDA28DD008FBC73 /* NetworkProtocol.swift in Sources */,
 				0E4E3B091EDB37C800FDFFF5 /* BasicTableViewCell.swift in Sources */,
 				0E1100721EDA1E070050EE1F /* AppDelegate.swift in Sources */,
+				A8958D1C1EDC7D9200C31131 /* ApiKeys.swift in Sources */,
 				A8958D0C1EDC298800C31131 /* UserDataProviderProtocol.swift in Sources */,
 				0E4E3B071EDB375C00FDFFF5 /* UserListViewController.swift in Sources */,
 				0E4E3B031EDB2EBE00FDFFF5 /* UserDataProvider.swift in Sources */,

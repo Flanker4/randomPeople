@@ -21,7 +21,7 @@ enum NetworkRequest: NetworkRequestProtocol {
     var params: [String: String] {
         switch self {
         case .getUsers(let page):
-            return ["page": String(page), "results": "20", "seed": "pagination"]
+            return ["page": String(page), CommonKeys.results.key: "20", "seed": "pagination"]
         }
     }
 }
@@ -37,22 +37,5 @@ extension Dictionary where Key == String {
 }
 
 
-enum UserKeys: String{
-    case email
-    case name
-    case first
-    case last
-    case gender
-    case picture
-    case large
-    case thumbnail
-    
-    var key: String {
-        return self.rawValue
-    }
-}
 
-func * (left: String, right: UserKeys) -> String {
-    return "\(left).\(right.key)"
-}
 

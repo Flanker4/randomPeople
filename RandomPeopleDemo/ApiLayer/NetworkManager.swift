@@ -43,7 +43,7 @@ class NetworkManager: NetworkManagerProtocol {
         guard let urlRequest = self.url(request: request) else {
             return nil
         }
-        return self.manager.request(urlRequest).responseArray(keyPath: "results") { (response:DataResponse<[T]>) in
+        return self.manager.request(urlRequest).responseArray(keyPath: CommonKeys.results.key) { (response:DataResponse<[T]>) in
             completionHandler(response.result)
         }
     }
