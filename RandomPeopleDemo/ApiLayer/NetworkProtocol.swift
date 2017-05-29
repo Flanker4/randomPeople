@@ -10,6 +10,8 @@ import Foundation
 import Alamofire
 import ObjectMapper
 
+typealias Result = Alamofire.Result
+
 protocol NetworkRequestProtocol {
     var path: String { get }
     var params: [String: String] { get }
@@ -20,6 +22,6 @@ protocol NetworkOperationProtocol {
 }
 
 protocol NetworkManagerProtocol {
-    @discardableResult func sendNetworkRequest<T : BaseMappable>(request: NetworkRequestProtocol,
-                            completionHandler: @escaping (DataResponse<[T]>) -> Void) -> NetworkOperationProtocol?
+    @discardableResult func sendNetworkRequest<T:BaseMappable>(request: NetworkRequestProtocol,
+                                                               completionHandler: @escaping (Result<[T]>) -> Void) -> NetworkOperationProtocol?
 }

@@ -1,5 +1,6 @@
 
 platform :ios, '10.0'
+inhibit_all_warnings!
 
 target 'RandomPeopleDemo' do
   use_frameworks!
@@ -15,6 +16,8 @@ target 'RandomPeopleDemo' do
   
   target 'RandomPeopleDemoTests' do
     inherit! :search_paths
+
+    pod 'ObjectMapper', '~> 2.2'
   end
 
   target 'RandomPeopleDemoUITests' do

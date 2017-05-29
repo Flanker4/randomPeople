@@ -10,7 +10,7 @@ import Foundation
 import SwinjectStoryboard
 import RealmSwift
 
-struct  NetworkConstant {
+struct NetworkConstant {
     static let URLHost = "randomuser.me"
     static let URLScheme = "https"
 }
@@ -21,15 +21,21 @@ extension SwinjectStoryboard {
         defaultContainer.storyboardInitCompleted(UserListViewController.self) { r, c in
             c.dataProvider = r.resolve(UserDataProvider.self)
         }
-        defaultContainer.storyboardInitCompleted(UserListViewController.self) { r, c in
+        defaultContainer.storyboardInitCompleted(UserDetailsViewController.self) { r, c in
             c.dataProvider = r.resolve(UserDataProvider.self)!
         }
-        
-        defaultContainer.register(NetworkManager.self){ _ in
+
+        defaultContainer.register(NetworkManager.self) { _ in
             NetworkManager(scheme: NetworkConstant.URLScheme, host: NetworkConstant.URLHost)
         }
-        defaultContainer.register(Realm.self){ r in try! Realm()}
-        defaultContainer.register(UserDataProvider.self) { r in UserDataProvider(localStorage: r.resolve(Realm.self)!,
-                                                                                 networkManager:r.resolve(NetworkManager.self)!) }
+
+        defaultContainer.register(Realm.self) { r in
+            try! Realm()
+        }
+
+        defaultContainer.register(UserDataProvider.self) { r in
+            UserDataProvider(localStorage: r.resolve(Realm.self)!,
+                    networkManager: r.resolve(NetworkManager.self)!)
+        }
     }
 }

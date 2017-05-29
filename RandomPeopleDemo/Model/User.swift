@@ -12,38 +12,46 @@ import ObjectMapper
 class User: BaseModel {
     dynamic var firstName: String? = nil
     dynamic var lastName: String? = nil
-    dynamic var email: String? = nil
-    
+    //required params
+    dynamic var email: String = ""
+
     //private
     fileprivate dynamic var _pictureLarge: String?
     fileprivate dynamic var _pictureThumbnail: String?
     fileprivate dynamic var _gender = Gender.unknown.rawValue
+    
+    required convenience init?(map: Map) {
+        guard let _ = map.JSON["email"] else {
+            return nil
+        }
+        self.init()
+    }
 
 }
 
 
-extension User: StaticMappable{
+extension User: Mappable {
     func mapping(map: Map) {
-        firstName     <- map["name.first"]
-        lastName      <- map["name.last"]
-        email         <- map["email"]
-        _gender       <- map["gender"]
-        _pictureLarge <- map["picture.large"]
-        _pictureThumbnail <- map["picture.thumbnail"]
+        firstName <- map[UserKeys.name.dot(.first)]
+        lastName <- map[UserKeys.name.dot(.last)]
+        email <- map[UserKeys.email.key]
+        _gender <- map[UserKeys.gender.key]
+        _pictureLarge <- map[UserKeys.picture.dot(.large)]
+        _pictureThumbnail <- map[UserKeys.picture.dot(.thumbnail)]
     }
 
     class func objectForMapping(map: Map) -> BaseMappable? {
-        return User() //we can use object from cache
+        return User(map: map) //we can use object from cache
     }
 }
 
 extension User {
-    var gender: Gender{
+    var gender: Gender {
         get {
             return Gender(rawValue: _gender) ?? .unknown;
         }
     }
-    
+
     var pictureLarge: URL? {
         get {
             guard let urlStr = _pictureLarge else {
@@ -52,7 +60,7 @@ extension User {
             return URL(string: urlStr)
         }
     }
-    
+
     var pictureThumbnail: URL? {
         get {
             guard let urlStr = _pictureThumbnail else {

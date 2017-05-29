@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-class UserList: BaseModel{
+class UserList: BaseModel {
     let users = List<User>()
     dynamic var page: Int = 0
 }
