@@ -9,16 +9,26 @@
 import UIKit
 import AlamofireImage
 import CCBottomRefreshControl
-class UserListViewController: UITableViewController{
+final class UserListViewController: UITableViewController{
     var dataProvider: UserDataProvider? = nil
-    fileprivate var isRefreshing = false
+
+    fileprivate var isRefreshing = false {
+        didSet {
+            if isRefreshing {
+                self.tableView.bottomRefreshControl?.beginRefreshing()
+            }else{
+                self.tableView.bottomRefreshControl?.endRefreshing()
+            }
+
+        }
+    }
    
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.title = NSLocalizedString("Friend List", comment: "")
         self.dataProvider?.changeNotificationBlock = { [weak self] result in
             switch result {
             case .success(_):
@@ -26,7 +36,7 @@ class UserListViewController: UITableViewController{
             case .failure(let error):
                 print(error)
             }
-            self?.tableView.bottomRefreshControl?.endRefreshing()
+            
             self?.isRefreshing = false
         }
     }
@@ -60,20 +70,10 @@ class UserListViewController: UITableViewController{
         }
         
         let user = items[indexPath.item]
-        cell?.titleLabel?.text = user.firstName
-        cell?.imgView?.af_setImage(withURL: (user.pictureThumbnail)!)
+        cell?.cellViewModel = user.basicTableViewCellModel()
         return cell!
     }
-    
-//    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-//        guard let items = self.dataProvider?.items.value else {
-//            return
-//        }
-//        if (items.count - 1 == indexPath.item) {
-//            self.refreshControl?.beginRefreshing()
-//            
-//        }
-//    }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //TODO: use router
         guard let userDetailViewController = segue.destination as? UserDetailsViewController,
@@ -82,7 +82,7 @@ class UserListViewController: UITableViewController{
         {
             return
         }
-        userDetailViewController.userId = self.dataProvider?.items.value?[indexPath.row].objectId
+        userDetailViewController.detailViewModel = self.dataProvider?.items.value?[indexPath.row].userDetailViewModel()
     }
 }
 

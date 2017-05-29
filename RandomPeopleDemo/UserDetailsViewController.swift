@@ -8,29 +8,35 @@
 
 import UIKit
 
-class UserDetailsViewController: UIViewController {
-    public var userId: String?
-    var dataProvider: UserDataProvider?
-    
+final class UserDetailsViewController: UIViewController {
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var genderLabel: UILabel!
     @IBOutlet var avatarImage: UIImageView!
     @IBOutlet var emailLabel: UILabel!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        guard let user = self.dataProvider?.item(id: self.userId!).value else {
-            return
+
+    var detailViewModel: UserDetailViewModel? {
+        didSet {
+            if (self.isViewLoaded) {
+                self.update()
+            }
         }
-        self.nameLabel.text = user.firstName
-        self.genderLabel.text = user.gender.rawValue.capitalized
-        self.emailLabel.text = user.email
-        self.avatarImage.af_setImage(withURL: user.pictureLarge!)
-        
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.update()
+    }
+
+    func update() {
+        self.title = self.detailViewModel?.fullName;
+        
+        self.nameLabel.text = self.detailViewModel?.fullName
+        self.genderLabel.text = self.detailViewModel?.gender
+        self.emailLabel.text = self.detailViewModel?.email
+        if let url = self.detailViewModel?.imageURL {
+            self.avatarImage.af_setImage(withURL: url)
+        }
+    }
 
 
 }

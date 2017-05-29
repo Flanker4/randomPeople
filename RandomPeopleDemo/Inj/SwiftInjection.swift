@@ -21,9 +21,6 @@ extension SwinjectStoryboard {
         defaultContainer.storyboardInitCompleted(UserListViewController.self) { r, c in
             c.dataProvider = r.resolve(UserDataProvider.self)
         }
-        defaultContainer.storyboardInitCompleted(UserDetailsViewController.self) { r, c in
-            c.dataProvider = r.resolve(UserDataProvider.self)!
-        }
 
         defaultContainer.register(NetworkManager.self) { _ in
             NetworkManager(scheme: NetworkConstant.URLScheme, host: NetworkConstant.URLHost)

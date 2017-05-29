@@ -21,7 +21,7 @@ enum NetworkRequest: NetworkRequestProtocol {
     var params: [String: String] {
         switch self {
         case .getUsers(let page):
-            return ["page": String(page), "results": "5", "seed": "pagination"]
+            return ["page": String(page), "results": "20", "seed": "pagination"]
         }
     }
 }
@@ -50,8 +50,9 @@ enum UserKeys: String{
     var key: String {
         return self.rawValue
     }
-    
-    func dot(_ key:UserKeys) -> String {
-        return "\(self.key).\(key.key)"
-    }
 }
+
+func * (left: String, right: UserKeys) -> String {
+    return "\(left).\(right.key)"
+}
+

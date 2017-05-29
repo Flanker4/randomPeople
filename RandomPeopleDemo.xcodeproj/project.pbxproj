@@ -12,7 +12,6 @@
 		0E1100771EDA1E070050EE1F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E1100751EDA1E070050EE1F /* Main.storyboard */; };
 		0E1100791EDA1E070050EE1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E1100781EDA1E070050EE1F /* Assets.xcassets */; };
 		0E11007C1EDA1E070050EE1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E11007A1EDA1E070050EE1F /* LaunchScreen.storyboard */; };
-		0E1100871EDA1E070050EE1F /* RandomPeopleDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1100861EDA1E070050EE1F /* RandomPeopleDemoTests.swift */; };
 		0E1100921EDA1E070050EE1F /* RandomPeopleDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1100911EDA1E070050EE1F /* RandomPeopleDemoUITests.swift */; };
 		0E1100A11EDA24E40050EE1F /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1100A01EDA24E40050EE1F /* BaseModel.swift */; };
 		0E3AEA471EDB808B00B033F2 /* SwiftInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3AEA461EDB808A00B033F2 /* SwiftInjection.swift */; };
@@ -21,7 +20,7 @@
 		0E4E3B071EDB375C00FDFFF5 /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4E3B061EDB375C00FDFFF5 /* UserListViewController.swift */; };
 		0E4E3B091EDB37C800FDFFF5 /* BasicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4E3B081EDB37C800FDFFF5 /* BasicTableViewCell.swift */; };
 		0E4E3B0B1EDB4F9200FDFFF5 /* UserList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4E3B0A1EDB4F9200FDFFF5 /* UserList.swift */; };
-		0E4E3B0E1EDB5E2A00FDFFF5 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4E3B0D1EDB5E2A00FDFFF5 /* File.swift */; };
+		0E4E3B0E1EDB5E2A00FDFFF5 /* Runtime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4E3B0D1EDB5E2A00FDFFF5 /* Runtime.swift */; };
 		0EDC18FB1EDA28DD008FBC73 /* NetworkProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDC18FA1EDA28DD008FBC73 /* NetworkProtocol.swift */; };
 		0EDC18FE1EDA2AAE008FBC73 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDC18FD1EDA2AAE008FBC73 /* NetworkRequest.swift */; };
 		0EDC19001EDA2D5E008FBC73 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDC18FF1EDA2D5E008FBC73 /* NetworkManager.swift */; };
@@ -29,6 +28,8 @@
 		4C07D476FA6BC29212366264 /* Pods_RandomPeopleDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58316EFDE8DDD51FEC5126B2 /* Pods_RandomPeopleDemoTests.framework */; };
 		A8958D0A1EDC0C3700C31131 /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8958D091EDC0C3700C31131 /* UserTests.swift */; };
 		A8958D0C1EDC298800C31131 /* UserDataProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8958D0B1EDC298800C31131 /* UserDataProviderProtocol.swift */; };
+		A8958D0F1EDC5F7900C31131 /* BasicTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8958D0E1EDC5F7900C31131 /* BasicTableViewCellModel.swift */; };
+		A8958D191EDC6B4100C31131 /* UserDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8958D181EDC6B4100C31131 /* UserDetailViewModel.swift */; };
 		B896A46FB86ABE59504FCB57 /* Pods_RandomPeopleDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4990ADD05ED2A0C677DA7507 /* Pods_RandomPeopleDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,7 +60,6 @@
 		0E11007B1EDA1E070050EE1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0E11007D1EDA1E070050EE1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E1100821EDA1E070050EE1F /* RandomPeopleDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RandomPeopleDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0E1100861EDA1E070050EE1F /* RandomPeopleDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomPeopleDemoTests.swift; sourceTree = "<group>"; };
 		0E1100881EDA1E070050EE1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E11008D1EDA1E070050EE1F /* RandomPeopleDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RandomPeopleDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E1100911EDA1E070050EE1F /* RandomPeopleDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomPeopleDemoUITests.swift; sourceTree = "<group>"; };
@@ -71,7 +71,7 @@
 		0E4E3B061EDB375C00FDFFF5 /* UserListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserListViewController.swift; path = ViewController/UserListViewController.swift; sourceTree = "<group>"; };
 		0E4E3B081EDB37C800FDFFF5 /* BasicTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BasicTableViewCell.swift; path = View/BasicTableViewCell.swift; sourceTree = "<group>"; };
 		0E4E3B0A1EDB4F9200FDFFF5 /* UserList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserList.swift; sourceTree = "<group>"; };
-		0E4E3B0D1EDB5E2A00FDFFF5 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = File.swift; path = Helpers/File.swift; sourceTree = "<group>"; };
+		0E4E3B0D1EDB5E2A00FDFFF5 /* Runtime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Runtime.swift; path = Helpers/Runtime.swift; sourceTree = "<group>"; };
 		0EDC18FA1EDA28DD008FBC73 /* NetworkProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkProtocol.swift; sourceTree = "<group>"; };
 		0EDC18FD1EDA2AAE008FBC73 /* NetworkRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		0EDC18FF1EDA2D5E008FBC73 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -82,6 +82,8 @@
 		A2BFB12088486A71D48D1A65 /* Pods-RandomPeopleDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RandomPeopleDemoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RandomPeopleDemoUITests/Pods-RandomPeopleDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A8958D091EDC0C3700C31131 /* UserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
 		A8958D0B1EDC298800C31131 /* UserDataProviderProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserDataProviderProtocol.swift; path = DataProvider/UserDataProviderProtocol.swift; sourceTree = "<group>"; };
+		A8958D0E1EDC5F7900C31131 /* BasicTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BasicTableViewCellModel.swift; path = RandomPeopleDemo/ViewModel/BasicTableViewCellModel.swift; sourceTree = SOURCE_ROOT; };
+		A8958D181EDC6B4100C31131 /* UserDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserDetailViewModel.swift; path = RandomPeopleDemo/ViewModel/UserDetailViewModel.swift; sourceTree = SOURCE_ROOT; };
 		DCE69C080317B64A6C2D3C02 /* Pods-RandomPeopleDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RandomPeopleDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-RandomPeopleDemo/Pods-RandomPeopleDemo.release.xcconfig"; sourceTree = "<group>"; };
 		E625DF0C7FA32900CF4CA2B5 /* Pods-RandomPeopleDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RandomPeopleDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RandomPeopleDemoTests/Pods-RandomPeopleDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		FEAFAFE5B59B050B3506D5AC /* Pods-RandomPeopleDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RandomPeopleDemoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RandomPeopleDemoUITests/Pods-RandomPeopleDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -140,18 +142,11 @@
 		0E1100701EDA1E060050EE1F /* RandomPeopleDemo */ = {
 			isa = PBXGroup;
 			children = (
-				0E3AEA451EDB7F2300B033F2 /* Inj */,
-				0E4E3B0C1EDB5E0100FDFFF5 /* Helpers */,
+				A8958D121EDC64F800C31131 /* Stuff */,
+				A8958D111EDC64CD00C31131 /* Services */,
 				0E4E3B051EDB373100FDFFF5 /* ViewController */,
-				0E4E3B011EDB2E9800FDFFF5 /* DataProvider */,
-				0EDC18F91EDA2818008FBC73 /* ApiLayer */,
+				A8958D101EDC648200C31131 /* View */,
 				A8958D0D1EDC3FC400C31131 /* ViewModel */,
-				0E11009F1EDA24AD0050EE1F /* Model */,
-				0E1100711EDA1E070050EE1F /* AppDelegate.swift */,
-				0E1100751EDA1E070050EE1F /* Main.storyboard */,
-				0E1100781EDA1E070050EE1F /* Assets.xcassets */,
-				0E11007A1EDA1E070050EE1F /* LaunchScreen.storyboard */,
-				0E11007D1EDA1E070050EE1F /* Info.plist */,
 			);
 			path = RandomPeopleDemo;
 			sourceTree = "<group>";
@@ -159,7 +154,6 @@
 		0E1100851EDA1E070050EE1F /* RandomPeopleDemoTests */ = {
 			isa = PBXGroup;
 			children = (
-				0E1100861EDA1E070050EE1F /* RandomPeopleDemoTests.swift */,
 				0E1100881EDA1E070050EE1F /* Info.plist */,
 				A8958D091EDC0C3700C31131 /* UserTests.swift */,
 			);
@@ -185,19 +179,19 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		0E3AEA451EDB7F2300B033F2 /* Inj */ = {
+		0E3AEA451EDB7F2300B033F2 /* Injection */ = {
 			isa = PBXGroup;
 			children = (
 				0E3AEA461EDB808A00B033F2 /* SwiftInjection.swift */,
 			);
-			name = Inj;
+			name = Injection;
 			sourceTree = "<group>";
 		};
 		0E4E3B011EDB2E9800FDFFF5 /* DataProvider */ = {
 			isa = PBXGroup;
 			children = (
+				A8958D161EDC681E00C31131 /* Protocol */,
 				0E4E3B021EDB2EBE00FDFFF5 /* UserDataProvider.swift */,
-				A8958D0B1EDC298800C31131 /* UserDataProviderProtocol.swift */,
 			);
 			name = DataProvider;
 			sourceTree = "<group>";
@@ -207,7 +201,6 @@
 			children = (
 				0E1100731EDA1E070050EE1F /* UserDetailsViewController.swift */,
 				0E4E3B061EDB375C00FDFFF5 /* UserListViewController.swift */,
-				0E4E3B081EDB37C800FDFFF5 /* BasicTableViewCell.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -215,7 +208,7 @@
 		0E4E3B0C1EDB5E0100FDFFF5 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				0E4E3B0D1EDB5E2A00FDFFF5 /* File.swift */,
+				0E4E3B0D1EDB5E2A00FDFFF5 /* Runtime.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -223,7 +216,7 @@
 		0EDC18F91EDA2818008FBC73 /* ApiLayer */ = {
 			isa = PBXGroup;
 			children = (
-				0EDC18FA1EDA28DD008FBC73 /* NetworkProtocol.swift */,
+				A8958D151EDC681300C31131 /* Procol */,
 				0EDC18FD1EDA2AAE008FBC73 /* NetworkRequest.swift */,
 				0EDC18FF1EDA2D5E008FBC73 /* NetworkManager.swift */,
 			);
@@ -256,9 +249,75 @@
 		A8958D0D1EDC3FC400C31131 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				A8958D0E1EDC5F7900C31131 /* BasicTableViewCellModel.swift */,
+				A8958D181EDC6B4100C31131 /* UserDetailViewModel.swift */,
 			);
 			name = ViewModel;
 			path = Model;
+			sourceTree = "<group>";
+		};
+		A8958D101EDC648200C31131 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A8958D141EDC654C00C31131 /* Cell */,
+				A8958D131EDC654000C31131 /* Storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		A8958D111EDC64CD00C31131 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				0E4E3B0C1EDB5E0100FDFFF5 /* Helpers */,
+				0E11009F1EDA24AD0050EE1F /* Model */,
+				0EDC18F91EDA2818008FBC73 /* ApiLayer */,
+				0E4E3B011EDB2E9800FDFFF5 /* DataProvider */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		A8958D121EDC64F800C31131 /* Stuff */ = {
+			isa = PBXGroup;
+			children = (
+				0E1100781EDA1E070050EE1F /* Assets.xcassets */,
+				0E3AEA451EDB7F2300B033F2 /* Injection */,
+				0E1100711EDA1E070050EE1F /* AppDelegate.swift */,
+				0E11007D1EDA1E070050EE1F /* Info.plist */,
+			);
+			name = Stuff;
+			sourceTree = "<group>";
+		};
+		A8958D131EDC654000C31131 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				0E1100751EDA1E070050EE1F /* Main.storyboard */,
+				0E11007A1EDA1E070050EE1F /* LaunchScreen.storyboard */,
+			);
+			name = Storyboard;
+			sourceTree = "<group>";
+		};
+		A8958D141EDC654C00C31131 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0E4E3B081EDB37C800FDFFF5 /* BasicTableViewCell.swift */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		A8958D151EDC681300C31131 /* Procol */ = {
+			isa = PBXGroup;
+			children = (
+				0EDC18FA1EDA28DD008FBC73 /* NetworkProtocol.swift */,
+			);
+			name = Procol;
+			sourceTree = "<group>";
+		};
+		A8958D161EDC681E00C31131 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				A8958D0B1EDC298800C31131 /* UserDataProviderProtocol.swift */,
+			);
+			name = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -547,9 +606,11 @@
 			files = (
 				0E3AEA471EDB808B00B033F2 /* SwiftInjection.swift in Sources */,
 				0EDC19001EDA2D5E008FBC73 /* NetworkManager.swift in Sources */,
-				0E4E3B0E1EDB5E2A00FDFFF5 /* File.swift in Sources */,
+				A8958D191EDC6B4100C31131 /* UserDetailViewModel.swift in Sources */,
+				0E4E3B0E1EDB5E2A00FDFFF5 /* Runtime.swift in Sources */,
 				0E1100A11EDA24E40050EE1F /* BaseModel.swift in Sources */,
 				0E1100741EDA1E070050EE1F /* UserDetailsViewController.swift in Sources */,
+				A8958D0F1EDC5F7900C31131 /* BasicTableViewCellModel.swift in Sources */,
 				0E4E3B0B1EDB4F9200FDFFF5 /* UserList.swift in Sources */,
 				0EDC18FB1EDA28DD008FBC73 /* NetworkProtocol.swift in Sources */,
 				0E4E3B091EDB37C800FDFFF5 /* BasicTableViewCell.swift in Sources */,
@@ -567,7 +628,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A8958D0A1EDC0C3700C31131 /* UserTests.swift in Sources */,
-				0E1100871EDA1E070050EE1F /* RandomPeopleDemoTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -28,9 +28,16 @@ class RandomPeopleDemoUITests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testOpenDetailInfo() {
+        let app = XCUIApplication()
+        //get first cell
+        let elements =  app.staticTexts.matching(identifier: "baseCellTitleLabel")
+        let element = elements.element(boundBy: 0)
+        //get user name
+        let userName = element.label
+        //open new screen
+        element.tap()
+        //check
+        XCTAssertNotNil(app.otherElements.containing(.navigationBar, identifier:userName))
     }
-    
 }

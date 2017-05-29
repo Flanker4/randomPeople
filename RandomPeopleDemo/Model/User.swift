@@ -12,16 +12,15 @@ import ObjectMapper
 class User: BaseModel {
     dynamic var firstName: String? = nil
     dynamic var lastName: String? = nil
-    //required params
-    dynamic var email: String = ""
+    dynamic var email: String = "" //example of required field
 
     //private
     fileprivate dynamic var _pictureLarge: String?
     fileprivate dynamic var _pictureThumbnail: String?
     fileprivate dynamic var _gender = Gender.unknown.rawValue
-    
+
     required convenience init?(map: Map) {
-        guard let _ = map.JSON["email"] else {
+        guard let _ = map.JSON[UserKeys.email.key] else {
             return nil
         }
         self.init()
@@ -29,19 +28,18 @@ class User: BaseModel {
 
 }
 
-
 extension User: Mappable {
     func mapping(map: Map) {
-        firstName <- map[UserKeys.name.dot(.first)]
-        lastName <- map[UserKeys.name.dot(.last)]
-        email <- map[UserKeys.email.key]
-        _gender <- map[UserKeys.gender.key]
-        _pictureLarge <- map[UserKeys.picture.dot(.large)]
-        _pictureThumbnail <- map[UserKeys.picture.dot(.thumbnail)]
+        firstName           <- map[UserKeys.name.key * .first]
+        lastName            <- map[UserKeys.name.key * .last]
+        email               <- map[UserKeys.email.key]
+        _gender             <- map[UserKeys.gender.key]
+        _pictureLarge       <- map[UserKeys.picture.key * .large]
+        _pictureThumbnail   <- map[UserKeys.picture.key * .thumbnail]
     }
 
     class func objectForMapping(map: Map) -> BaseMappable? {
-        return User(map: map) //we can use object from cache
+        return User(map: map)
     }
 }
 
