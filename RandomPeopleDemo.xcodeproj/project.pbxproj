@@ -27,10 +27,11 @@
 		161E9BA9FC4ED3D22073D703 /* Pods_RandomPeopleDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 099E012B11A703631E94380C /* Pods_RandomPeopleDemoUITests.framework */; };
 		4C07D476FA6BC29212366264 /* Pods_RandomPeopleDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58316EFDE8DDD51FEC5126B2 /* Pods_RandomPeopleDemoTests.framework */; };
 		A8958D0A1EDC0C3700C31131 /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8958D091EDC0C3700C31131 /* UserTests.swift */; };
-		A8958D0C1EDC298800C31131 /* UserDataProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8958D0B1EDC298800C31131 /* UserDataProviderProtocol.swift */; };
 		A8958D0F1EDC5F7900C31131 /* BasicTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8958D0E1EDC5F7900C31131 /* BasicTableViewCellModel.swift */; };
 		A8958D191EDC6B4100C31131 /* UserDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8958D181EDC6B4100C31131 /* UserDetailViewModel.swift */; };
 		A8958D1C1EDC7D9200C31131 /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8958D1B1EDC7D9200C31131 /* ApiKeys.swift */; };
+		A8958D1E1EDD572700C31131 /* LocalStorageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8958D1D1EDD572700C31131 /* LocalStorageProtocol.swift */; };
+		AB1F506C54D14F6CCE3DA706 /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1F576250201F596B231A0A /* LocalStorage.swift */; };
 		B896A46FB86ABE59504FCB57 /* Pods_RandomPeopleDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4990ADD05ED2A0C677DA7507 /* Pods_RandomPeopleDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -82,10 +83,11 @@
 		64719960F609A6DEEC68CA2E /* Pods-RandomPeopleDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RandomPeopleDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RandomPeopleDemoTests/Pods-RandomPeopleDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A2BFB12088486A71D48D1A65 /* Pods-RandomPeopleDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RandomPeopleDemoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RandomPeopleDemoUITests/Pods-RandomPeopleDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A8958D091EDC0C3700C31131 /* UserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
-		A8958D0B1EDC298800C31131 /* UserDataProviderProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserDataProviderProtocol.swift; path = DataProvider/UserDataProviderProtocol.swift; sourceTree = "<group>"; };
 		A8958D0E1EDC5F7900C31131 /* BasicTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BasicTableViewCellModel.swift; path = RandomPeopleDemo/ViewModel/BasicTableViewCellModel.swift; sourceTree = SOURCE_ROOT; };
 		A8958D181EDC6B4100C31131 /* UserDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserDetailViewModel.swift; path = RandomPeopleDemo/ViewModel/UserDetailViewModel.swift; sourceTree = SOURCE_ROOT; };
 		A8958D1B1EDC7D9200C31131 /* ApiKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiKeys.swift; sourceTree = "<group>"; };
+		A8958D1D1EDD572700C31131 /* LocalStorageProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocalStorageProtocol.swift; path = DataProvider/LocalStorageProtocol.swift; sourceTree = "<group>"; };
+		AB1F576250201F596B231A0A /* LocalStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
 		DCE69C080317B64A6C2D3C02 /* Pods-RandomPeopleDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RandomPeopleDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-RandomPeopleDemo/Pods-RandomPeopleDemo.release.xcconfig"; sourceTree = "<group>"; };
 		E625DF0C7FA32900CF4CA2B5 /* Pods-RandomPeopleDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RandomPeopleDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RandomPeopleDemoTests/Pods-RandomPeopleDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		FEAFAFE5B59B050B3506D5AC /* Pods-RandomPeopleDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RandomPeopleDemoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RandomPeopleDemoUITests/Pods-RandomPeopleDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 			children = (
 				A8958D161EDC681E00C31131 /* Protocol */,
 				0E4E3B021EDB2EBE00FDFFF5 /* UserDataProvider.swift */,
+				AB1F576250201F596B231A0A /* LocalStorage.swift */,
 			);
 			name = DataProvider;
 			sourceTree = "<group>";
@@ -319,7 +322,7 @@
 		A8958D161EDC681E00C31131 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
-				A8958D0B1EDC298800C31131 /* UserDataProviderProtocol.swift */,
+				A8958D1D1EDD572700C31131 /* LocalStorageProtocol.swift */,
 			);
 			name = Protocol;
 			sourceTree = "<group>";
@@ -619,12 +622,13 @@
 				0EDC18FB1EDA28DD008FBC73 /* NetworkProtocol.swift in Sources */,
 				0E4E3B091EDB37C800FDFFF5 /* BasicTableViewCell.swift in Sources */,
 				0E1100721EDA1E070050EE1F /* AppDelegate.swift in Sources */,
+				A8958D1E1EDD572700C31131 /* LocalStorageProtocol.swift in Sources */,
 				A8958D1C1EDC7D9200C31131 /* ApiKeys.swift in Sources */,
-				A8958D0C1EDC298800C31131 /* UserDataProviderProtocol.swift in Sources */,
 				0E4E3B071EDB375C00FDFFF5 /* UserListViewController.swift in Sources */,
 				0E4E3B031EDB2EBE00FDFFF5 /* UserDataProvider.swift in Sources */,
 				0EDC18FE1EDA2AAE008FBC73 /* NetworkRequest.swift in Sources */,
 				0E4E3B001EDACFCA00FDFFF5 /* User.swift in Sources */,
+				AB1F506C54D14F6CCE3DA706 /* LocalStorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -28,5 +28,7 @@ func createFullName(firstName: String?, lastName: String?) -> String {
     if let lastName = lastName {
         fullNameComponents.append(lastName)
     }
-    return fullNameComponents.map{ $0.capitalized }.joined(separator: " ")
+    return fullNameComponents.map {
+        $0.capitalized
+    }.joined(separator: " ")
 }
