@@ -9,10 +9,10 @@
 import UIKit
 
 final class UserDetailsViewController: UIViewController {
-    @IBOutlet var nameLabel: UILabel!
-    @IBOutlet var genderLabel: UILabel!
-    @IBOutlet var avatarImage: UIImageView!
-    @IBOutlet var emailLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var genderLabel: UILabel!
+    @IBOutlet weak var avatarImage: UIImageView!
+    @IBOutlet weak var emailLabel: UILabel!
 
     var detailViewModel: UserDetailViewModel? {
         didSet {

@@ -10,6 +10,7 @@ import Foundation
 import Alamofire
 import AlamofireObjectMapper
 import ObjectMapper
+import AlamofireNetworkActivityLogger
 
 
 class NetworkManager: NetworkManagerProtocol {
@@ -22,7 +23,10 @@ class NetworkManager: NetworkManagerProtocol {
         self.scheme = scheme
         self.host = host
         self.manager = Alamofire.SessionManager(configuration: URLSessionConfiguration.default)
-
+        #if DEBUG
+            NetworkActivityLogger.shared.startLogging()
+            NetworkActivityLogger.shared.level = .debug
+        #endif
     }
 
     final func url(request: NetworkRequestProtocol) -> URL? {

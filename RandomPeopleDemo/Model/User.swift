@@ -30,12 +30,12 @@ class User: BaseModel {
 
 extension User: Mappable {
     func mapping(map: Map) {
-        firstName           <- map[UserKeys.name.key * .first]
-        lastName            <- map[UserKeys.name.key * .last]
+        firstName           <- map[UserKeys.name.key >> .first]
+        lastName            <- map[UserKeys.name.key >> .last]
         email               <- map[UserKeys.email.key]
         _gender             <- map[UserKeys.gender.key]
-        _pictureLarge       <- map[UserKeys.picture.key * .large]
-        _pictureThumbnail   <- map[UserKeys.picture.key * .thumbnail]
+        _pictureLarge       <- map[UserKeys.picture.key >> .large]
+        _pictureThumbnail   <- map[UserKeys.picture.key >> .thumbnail]
     }
 
     class func objectForMapping(map: Map) -> BaseMappable? {

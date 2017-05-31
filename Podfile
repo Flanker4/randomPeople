@@ -14,6 +14,7 @@ target 'RandomPeopleDemo' do
   pod 'Swinject'
   pod 'SwinjectStoryboard', '~> 1.1'
   pod 'CCBottomRefreshControl'
+  pod 'AlamofireNetworkActivityLogger'
   
   target 'RandomPeopleDemoTests' do
     inherit! :search_paths

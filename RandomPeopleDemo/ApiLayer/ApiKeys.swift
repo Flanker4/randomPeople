@@ -26,7 +26,7 @@ enum UserKeys: String{
     case gender
     case picture
     case large
-    case thumbnail
+    case thumbnail = "medium"
 }
 
 enum CommonKeys: String{
@@ -35,6 +35,8 @@ enum CommonKeys: String{
 
 extension UserKeys: ApiKeys {}
 extension CommonKeys: ApiKeys {}
-func * (left: String, right: UserKeys) -> String {
+
+/// Demo of overloading standart operators (>> is taked just for the demo)
+func >> (left: String, right: UserKeys) -> String {
     return "\(left).\(right.key)"
 }

@@ -20,7 +20,7 @@
 		0E4E3B071EDB375C00FDFFF5 /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4E3B061EDB375C00FDFFF5 /* UserListViewController.swift */; };
 		0E4E3B091EDB37C800FDFFF5 /* BasicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4E3B081EDB37C800FDFFF5 /* BasicTableViewCell.swift */; };
 		0E4E3B0B1EDB4F9200FDFFF5 /* UserList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4E3B0A1EDB4F9200FDFFF5 /* UserList.swift */; };
-		0E4E3B0E1EDB5E2A00FDFFF5 /* Runtime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4E3B0D1EDB5E2A00FDFFF5 /* Runtime.swift */; };
+		0E4E3B0E1EDB5E2A00FDFFF5 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4E3B0D1EDB5E2A00FDFFF5 /* Helpers.swift */; };
 		0EDC18FB1EDA28DD008FBC73 /* NetworkProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDC18FA1EDA28DD008FBC73 /* NetworkProtocol.swift */; };
 		0EDC18FE1EDA2AAE008FBC73 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDC18FD1EDA2AAE008FBC73 /* NetworkRequest.swift */; };
 		0EDC19001EDA2D5E008FBC73 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDC18FF1EDA2D5E008FBC73 /* NetworkManager.swift */; };
@@ -73,7 +73,7 @@
 		0E4E3B061EDB375C00FDFFF5 /* UserListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserListViewController.swift; path = ViewController/UserListViewController.swift; sourceTree = "<group>"; };
 		0E4E3B081EDB37C800FDFFF5 /* BasicTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BasicTableViewCell.swift; path = View/BasicTableViewCell.swift; sourceTree = "<group>"; };
 		0E4E3B0A1EDB4F9200FDFFF5 /* UserList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserList.swift; sourceTree = "<group>"; };
-		0E4E3B0D1EDB5E2A00FDFFF5 /* Runtime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Runtime.swift; path = Helpers/Runtime.swift; sourceTree = "<group>"; };
+		0E4E3B0D1EDB5E2A00FDFFF5 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Helpers.swift; path = Helpers/Helpers.swift; sourceTree = "<group>"; };
 		0EDC18FA1EDA28DD008FBC73 /* NetworkProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkProtocol.swift; sourceTree = "<group>"; };
 		0EDC18FD1EDA2AAE008FBC73 /* NetworkRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		0EDC18FF1EDA2D5E008FBC73 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -214,7 +214,7 @@
 		0E4E3B0C1EDB5E0100FDFFF5 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				0E4E3B0D1EDB5E2A00FDFFF5 /* Runtime.swift */,
+				0E4E3B0D1EDB5E2A00FDFFF5 /* Helpers.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -614,7 +614,7 @@
 				0E3AEA471EDB808B00B033F2 /* SwiftInjection.swift in Sources */,
 				0EDC19001EDA2D5E008FBC73 /* NetworkManager.swift in Sources */,
 				A8958D191EDC6B4100C31131 /* UserDetailViewModel.swift in Sources */,
-				0E4E3B0E1EDB5E2A00FDFFF5 /* Runtime.swift in Sources */,
+				0E4E3B0E1EDB5E2A00FDFFF5 /* Helpers.swift in Sources */,
 				0E1100A11EDA24E40050EE1F /* BaseModel.swift in Sources */,
 				0E1100741EDA1E070050EE1F /* UserDetailsViewController.swift in Sources */,
 				A8958D0F1EDC5F7900C31131 /* BasicTableViewCellModel.swift in Sources */,

@@ -20,15 +20,3 @@ extension User {
     }
 }
 
-func createFullName(firstName: String?, lastName: String?) -> String {
-    var fullNameComponents: [String] = []
-    if let firstName = firstName {
-        fullNameComponents.append(firstName)
-    }
-    if let lastName = lastName {
-        fullNameComponents.append(lastName)
-    }
-    return fullNameComponents.map {
-        $0.capitalized
-    }.joined(separator: " ")
-}

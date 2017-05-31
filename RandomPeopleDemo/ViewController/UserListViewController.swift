@@ -115,7 +115,7 @@ extension UserListViewController {
             self?.update()
         }
 
-        if self.dataProvider?.items.value?.count == 0 {
+        if self.dataProvider?.isRequiredUpdateCache == true {
             self.loadNextPage()
         }
     }

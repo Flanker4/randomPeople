@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '004CD8836A47800CBACAC32215D3ABF7'
-               BlueprintName = 'SwinjectStoryboard'
+               BlueprintIdentifier = '0C507C82B332BA025F51E7BDB6126D8B'
+               BlueprintName = 'AlamofireNetworkActivityLogger'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'SwinjectStoryboard.framework'>
+               BuildableName = 'AlamofireNetworkActivityLogger.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

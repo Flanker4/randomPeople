@@ -49,4 +49,15 @@ extension Realm: LocalStorageProtocol {
 
         return users
     }
+    
+    func dropCache(userList:UserList ) -> Result<Bool> {
+        self.beginWrite()
+        userList.users.removeAll()
+        do {
+            try self.commitWrite()
+        } catch {
+            return .failure(LocalStorageError.writeError)
+        }
+        return .success(true)
+    }
 }

@@ -17,5 +17,7 @@ protocol LocalStorageProtocol {
     var userList: Result<UserList> { get set }
 
     func addUsers(users: Result<[User]>, toUserList: UserList?) -> Result<[User]>
+    
+    func dropCache(userList:UserList ) -> Result<Bool>
 }
 

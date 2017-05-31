@@ -4,6 +4,8 @@ PODS:
     - Alamofire (~> 4.1)
   - AlamofireNetworkActivityIndicator (2.1.0):
     - Alamofire (~> 4.1)
+  - AlamofireNetworkActivityLogger (2.2.0):
+    - Alamofire (~> 4.0)
   - AlamofireObjectMapper (4.0.1):
     - Alamofire (~> 4.1)
     - ObjectMapper (~> 2.0)
@@ -21,6 +23,7 @@ PODS:
 DEPENDENCIES:
   - AlamofireImage (~> 3.1)
   - AlamofireNetworkActivityIndicator (~> 2.0)
+  - AlamofireNetworkActivityLogger
   - AlamofireObjectMapper (~> 4.0)
   - CCBottomRefreshControl
   - ObjectMapper (~> 2.2)
@@ -32,6 +35,7 @@ SPEC CHECKSUMS:
   Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
   AlamofireImage: 157ed682cc81d3b9db4fb90c1f12180ac552d93b
   AlamofireNetworkActivityIndicator: 4716f6554bdfb9c7cf13b1e0e3af21163129690a
+  AlamofireNetworkActivityLogger: a7ae1842988b3f6248a49213268375bd27b515f0
   AlamofireObjectMapper: 842d2eed43a4d0593ff0110d54ac86a170c4519c
   CCBottomRefreshControl: 389780b4488321c91d18f66a6da5ef9606df6de5
   ObjectMapper: 9e385c2295bcc4e16eabbcfc85db801442bba545
@@ -40,6 +44,6 @@ SPEC CHECKSUMS:
   Swinject: 85e468ac75c5c2d234076f98c591d57d56bc64bc
   SwinjectStoryboard: 4c71c25f312322844d39ee06f0f523db7b9b10a3
 
-PODFILE CHECKSUM: 9328560c1dd8839cf366cda38f566ccff010b8c1
+PODFILE CHECKSUM: 3009c05da3ce1fa91fec54a550e03713f2ca07d8
 
 COCOAPODS: 1.1.1

@@ -13,12 +13,19 @@ import RealmSwift
 import ObjectMapper
 
 class UserDataProvider {
-
+    
     fileprivate let userList: UserList
     fileprivate var localStorage: LocalStorageProtocol
     fileprivate let networkManager: NetworkManagerProtocol
     fileprivate var notificationToken: NotificationToken? = nil
 
+    var isRequiredUpdateCache:Bool {
+        get {
+            //example of method which tells that we need download additional data
+            //also we need to drop old cache self.localStorage.dropCache(self.userList)
+            return (self.items.value?.count == 0)
+        }
+    }
     var changeNotificationBlock: ((Result<List<User>>) -> Void)? {
         didSet {
             guard let _ = changeNotificationBlock else {
@@ -60,7 +67,7 @@ class UserDataProvider {
             return Result.success(self.userList.users)
         }
     }
-
+    
     func getUsers(handler: ((Result<[User]>) -> Void)?) {
         let request = NetworkRequest.getUsers(page: userList.page)
         networkManager.sendNetworkRequest(request: request) { [weak self] (result: Result<[User]>) in
@@ -70,7 +77,7 @@ class UserDataProvider {
             }
         }
     }
-
+    
     deinit {
         self.changeNotificationBlock = nil
     }
